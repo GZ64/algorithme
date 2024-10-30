@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algo</title>
+</head>
+
+<body>
+<script>
+    // var d = new Date();
+    // var d = new Date(100000);
+    // var d = new Date("October 13, 2014 11:13:00");
+    // var d = new Date(1981, 6, 30, 21, 30, 30, 30);
+    // var d = new Date(9, 11, 24);
+    // var d = new Date(0);
+    // var d = new Date(100000000000);
+    // var d = new Date(-100000000000);
+    // var d = new Date(86400000);
+    var d = new Date("2015-03-25T12:00:00-06:30");
+
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    console.log('date is: ', months[d.getMonth()]);
+    console.log('toString(): ', d.toString());
+    console.log('toUTCString(): ', d.toUTCString());
+
+
+    // verifier si une entrée est une date
+    var is_date = function(input) {
+        if ( Object.prototype.toString.call(input) === "[object Date]" )
+            return true;
+        return false;
+    };
+
+    console.log(is_date("October 13, 2014 11:13:00"));
+    console.log(is_date(new Date(86400000)));
+    console.log(is_date(new Date(99,5,24,11,33,30,0)));
+    console.log(is_date([1, 2, 4, 0]));
+
+    var o = new Object();
+    var d = new Date();
+    console.log(o.toString()); // returns [object Object]
+    console.log(d.toString()); // returns [object Object]
+
+
+    // obtenir la date avec un format dd/mm/YYYY selon un separateur
+    function currentDate(sp) {
+        let date = new Date();
+
+        let day = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+
+        if (day < 10) day = '0' + day;
+        if (month < 10) month = '0' + month;
+
+        return day + sp + month + sp + year;
+    }
+
+    console.log(currentDate('/'));
+    console.log(currentDate('-'));
+
+    // calculer le nombre de jours dans un mois
+    function calculNbJoursMois(month, year) {
+        if (month < 10)
+        let date = new Date(year + ',' + month);
+        console.log(date);
+    }
+    console.log(calculNbJoursMois(1, 2012));
+    console.log(calculNbJoursMois(2, 2012));
+    console.log(calculNbJoursMois(9, 2012));
+    console.log(calculNbJoursMois(12, 2012));
+
+</script>
+</body>
+</html>

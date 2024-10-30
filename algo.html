@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algo</title>
+</head>
+
+<body>
+<script>
+    // Determinez le plus petit nombre premier qui est sur une position paire dans un vecteur donné.
+    // Si un tel nombre n'existe pas, un message approprié sera affiché.
+
+    // input un tableau X[N]
+    // output le premier nombre ou la chaine "NULL"
+
+    // ex: X = {9, 31, 38, 5, 62, 44, 38, 17, 19, 38, 50, 74}, la sortie est 5
+    // X = {4, 3, 14, 15, 18, 39, 56, 89, 101, 150, 165, 187} la sortie est 3
+
+    // var input_string = readInputContent();
+    // var X = [9, 31, 38, 5, 62, 44, 38, 17, 19, 38, 50, 74];
+    //
+    // function getSmallestEvenPrime(numbers_array) {
+    //     var evenTab = [];
+    //     var min;
+    //     for (var i = 0, c = numbers_array.length; i < c; i++) {
+    //         if (i % 2) evenTab.push(numbers_array[i]);
+    //     }
+    //     for (var i = 0, c = evenTab.length; i < c; i++) {
+    //         if (i === 0) {
+    //             min = evenTab[i];
+    //         } else {
+    //             if (evenTab[i] < min) {
+    //                 min = evenTab[i];
+    //             }
+    //         }
+    //     }
+    //     return min;
+    // }
+    //
+    // var output = getSmallestEvenPrime(X);
+    // console.log('output', output);
+
+
+
+    // CONDINGAME
+
+    /**
+     * CodinGame planet is being attacked by slimy insectoid aliens.
+     * <---
+     * Hint:To protect the planet, you can implement the pseudo-code provided in the statement, below the player.
+     **/
+
+
+    // game loop
+    // while (true) {
+    //     var enemy1 = readline(); // name of enemy 1
+    //     var dist1 = parseInt(readline()); // distance to enemy 1
+    //     var enemy2 = readline(); // name of enemy 2
+    //     var dist2 = parseInt(readline()); // distance to enemy 2
+    //
+    //     // Write an action using print()
+    //     // To debug: printErr('Debug messages...');
+    //     print(dist1 < dist2 ? enemy1 : enemy2); // You have to output a correct ship name to shoot ("Buzz", enemy1, enemy2, ...)
+    // }
+
+    // while (true) {
+    //     [...Array(8)]
+    //         .map(n => parseInt(prompt('entrez un nombre')))
+    //         .reduce(function(p, c, i, a){
+    //             console.log('p', p);
+    //             console.log('c', c);
+    //             console.log('i', i);
+    //             console.log('a', a);
+    //             return c > a[p] ? i : p;
+    //         }, 0);
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //     // Write an action using print()
+    //     // To debug: printErr('Debug messages...');
+    //
+    //     // The index of the mountain to fire on.
+    // }
+
+
+        // algo trier tableau ES6
+    let tableauDesordonne = [2, 16, 6, 87, 26, 12, 46];
+    let tableauOrdonne = [];
+    for (var i = 0, count = tableauDesordonne.length; i < count; i++) {
+        let idx = tableauDesordonne.reduce((p, c, index, a) => c > a[p] ? index : p, 0);
+        tableauOrdonne[i] = tableauDesordonne[idx];
+        tableauDesordonne.splice(idx, 1);
+    }
+    console.log(tableauOrdonne);
+
+    // additionner toutes les valeurs d'un tableau
+    var total = [0, 1, 2, 3].reduce((p, c)=> p + c,0);
+
+    // chercher le plus grand/petit element
+    // let liste = [2, 16, 6, 87, 1, 26, 12, 46];
+    // let max_actuel = liste[0];
+    // let min_actuel = liste[0];
+    // for (let i = 0, c = liste.length; i < c; i++) {
+    //     if (liste[i] > max_actuel) max_actuel = liste[i];
+    //     if (liste[i] < min_actuel) min_actuel = liste[i];
+    // }
+    // console.log('max_actuel', max_actuel);
+    // console.log('min_actuel', min_actuel);
+
+    // trouver les elements unique
+    // let liste = [2, 16, 6, 87, 16, 1, 26, 12, 87, 46, 6];
+    // let unique = [];
+    // let valeur_unique = true;
+    // unique[0] = liste[0];
+    //
+    // for (let i = 0, c = liste.length; i < c; i++) {
+    //     valeur_unique = true;
+    //     for (let j = 0, count = unique.length; j < count; j++) {
+    //         if (liste[i] === unique[j]) valeur_unique = false;
+    //     }
+    //     if (valeur_unique) unique.push(liste[i]);
+    // }
+    // console.log(unique);
+
+
+    // var i;
+    // var j;
+    // for (i = 0; i <= 4; i++) {
+    //     for (j = 0; j <= i; j++) {
+    //         console.log('*');
+    //     }
+    //     console.log('\n');
+    // }
+
+    const student = [
+        {name: "kim", score: 70},
+        {name: "sarah", score: 22},
+        {name: "robert", score: 55},
+        {name: "quentin", score: 70},
+    ];
+
+    function triAlpha(a,b)
+    {
+        return (a.name > b.name) ? 1 : -1;
+    }
+    function triNumerique(a,b)
+    {
+        return (a.score > b.score) ? 1 : -1;
+    }
+
+    student.sort(triNumerique);
+
+    console.log('student', student);
+
+    function countWords (text) {
+        return text.split(/\W+/u).filter(Boolean).length
+    }
+
+
+
+</script>
+</body>
+</html>
